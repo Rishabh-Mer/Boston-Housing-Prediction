@@ -1,1 +1,67 @@
-<h1 style="color: skyblue;">Hello World</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston House Prediciton</title>
+    <style>
+        h4 {
+            color:  skyblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .btn {
+            color: black;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        h5 {
+            color: darkcyan;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="login" style="text-align: center;">
+        <h4>Boston Housing Prediction</h4>
+
+        <form action="{{ url_for('predict') }}" method="post" id="form">
+
+            <input type="text" name="CRIM" id="CRIM" placeholder="CRIM" required="required"/> <br>
+            <input type="text" name="ZN" id="ZN"  required="required"/> <br>
+            <input type="text" name="INDUS" id="INDUS"  required="required"/> <br>
+            <input type="text" name="CHAS" id="CHAS"  required="required"/> <br>
+            <input type="text" name="NOX" id="NOX"  required="required"/> <br>
+            <input type="text" name="RM" id="RM"  required="required"/> <br>
+            <input type="text" name="Age" id="Age"  required="required"/> <br>
+            <input type="text" name="DIS" id="DIS"  required="required"/> <br>
+            <input type="text" name="RAD" id="RAD"  required="required"/> <br>
+            <input type="text" name="TAX" id="TAX"  required="required"/> <br>
+            <input type="text" name="PTRATIO" id="PTRATIO"  required="required"/> <br>
+            <input type="text" name="B" id="B"  required="required"/> <br>
+            <input type="text" name="LSTAT" id="LSTAT"  required="required"/> <br>
+
+            <button type="submit" class="btn btn-primary"> Predict </button>
+
+            <br>
+            <br>
+
+
+        </form>
+
+    </div>
+    <br>
+    <div>
+        <h5>{{ prediction_text }}</h5>
+    </div>
+    
+    
+</body>
+</html>
