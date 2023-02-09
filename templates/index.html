@@ -33,9 +33,10 @@
 
     <div>
 
-        <h4>Boston Housing Prediction</h4>
+        <h3>Boston Housing Prediction</h3>
+        <br>
 
-        <form class="form-control" action="{{ url_for('predict') }}" method="post" id="form">
+        <form action="{{ url_for('predict') }}" method="post" id="form">
 
             <input class="form-control" type="text" name="CRIM" id="CRIM" placeholder="CRIM" required="required"/> <br>
             <input class="form-control" type="text" name="ZN" id="ZN" placeholder="ZN" required="required"/> <br>
