@@ -27,10 +27,12 @@ def predict_api():
 @app.route('/predict', methods=["POST"])
 def predict():
     data = [float(x) for x in request.form.values()]
+    print(f"Data : {data}")
     final_input = scaler.transform(np.array(list(data)).reshape(1,-1))
-    print(final_input)
+    print(f"Final Input : {final_input}")
     output = model.predict(final_input)[0]
-    return render_template("index.html",prediction_text= "The House Prediction is  {}".format(output))
+    print(f"Output : {output:.2f}")
+    return render_template("index.html",prediction_text= "The house price prediction is {:.2f} $".format(output))
 
 if __name__ == "__main__":
     app.run(debug=True)

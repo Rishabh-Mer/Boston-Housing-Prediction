@@ -12,6 +12,17 @@
 
     <style>
 
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .form-group {
+            flex: 1;
+            margin: 5px;
+        }
+
+
         .btn {
             background-color:darkorange;
         }
@@ -25,7 +36,13 @@
             font-family: Comic Sans MS;
             background-color: black;
             color: skyblue
-          }
+        }
+
+        #predict_text {
+
+            color: rgb(255, 196, 35);
+            align-items: center;
+        }
 
     </style>
 </head>
@@ -38,33 +55,99 @@
 
         <form action="{{ url_for('predict') }}" method="post" id="form">
 
-            <input class="form-control" type="text" name="CRIM" id="CRIM" placeholder="CRIM" required="required"/> <br>
-            <input class="form-control" type="text" name="ZN" id="ZN" placeholder="ZN" required="required"/> <br>
-            <input class="form-control" type="text" name="INDUS" id="INDUS" placeholder="INDUS" required="required"/> <br>
-            <input class="form-control" type="text" name="CHAS" id="CHAS"  placeholder="CHAS" required="required"/> <br>
-            <input class="form-control" type="text" name="NOX" id="NOX"  placeholder="NOX" required="required"/> <br>
-            <input class="form-control" type="text" name="RM" id="RM"  placeholder="RM" required="required"/> <br>
-            <input class="form-control" type="text" name="Age" id="Age"  placeholder="Age" required="required"/> <br>
-            <input class="form-control" type="text" name="DIS" id="DIS"  placeholder="DIS" required="required"/> <br>
-            <input class="form-control" type="text" name="RAD" id="RAD"  placeholder="RAD" required="required"/> <br>
-            <input class="form-control" type="text" name="TAX" id="TAX" placeholder="TAX" required="required"/> <br>
-            <input class="form-control" type="text" name="PTRATIO" id="PTRATIO" placeholder="PTRATIO" required="required"/> <br>
-            <input class="form-control" type="text" name="B" id="B" placeholder="B" required="required"/> <br>
-            <input class="form-control" type="text" name="LSTAT" id="LSTAT" placeholder="LSTAT" required="required"/> <br>
+            <div class="form-container">
 
-            <button class="form-control btn btn-primary" type="submit"> Predict </button>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="CRIM" id="CRIM" placeholder="CRIM" required="required"/>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="ZN" id="ZN" placeholder="ZN" required="required"/> 
+                </div>
+
+            </div>
+
+            <div class="form-container">
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="INDUS" id="INDUS" placeholder="INDUS" required="required"/> 
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="CHAS" id="CHAS"  placeholder="CHAS" required="required"/> 
+                </div>
+            </div>
+
+            <div class="form-container">
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="NOX" id="NOX"  placeholder="NOX" required="required"/> 
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="RM" id="RM"  placeholder="RM" required="required"/>
+                </div>
+
+            </div>
+
+            <div class="form-container">
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="DIS" id="DIS"  placeholder="DIS" required="required"/>
+                </div>
+    
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="Age" id="Age"  placeholder="Age" required="required"/>
+                </div>
+
+            </div>
+
+            <div class="form-container">
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="RAD" id="RAD"  placeholder="RAD" required="required"/>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="TAX" id="TAX" placeholder="TAX" required="required"/>
+                </div>
+
+            </div>
+
+            <div class="form-container">
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="PTRATIO" id="PTRATIO" placeholder="PTRATIO" required="required"/>
+                </div>
+                
+                <div class="form-group">
+                    <input class="form-control" type="text" name="B" id="B" placeholder="B" required="required"/>
+                </div>
+            </div>
+
+            <div class="form-container">
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="LSTAT" id="LSTAT" placeholder="LSTAT" required="required"/>
+                </div> 
+
+            </div>
+
+            <div class="form-group">
+                <button class="form-control btn btn-primary" type="submit"> Predict </button>
+            </div>
 
             <br>
             <br>
-
 
         </form>
 
     </div>
     <br>
 
-    <div>
-        <h5>{{ prediction_text }}</h5>
+    <div class="form-container">
+        <h3 id="predict_text">{{ prediction_text }}</h3>
     </div>
     
     
